@@ -15,7 +15,6 @@ This is not recommended for production, for production use proper ssl certificat
   - [Enabling HTTPS](#enabling-https)
 - [AWS Setup](#aws-setup)
   - [EC2 Instance Creation](#ec2-instance-creation)
-  - [Apache Installation](#apache-installation)
   - [Self-Signed Certificate Generation](#self-signed-certificate-generation)
 - [Deploying Spring Boot Application on EC2](#deploying-spring-boot-application-on-ec2)
   - [Jar File Generation](#jar-file-generation)
@@ -78,7 +77,7 @@ server:
       - TCP (8080)
 6. Open Putty on your local machine and connect to ec2
 
-### Apache Installation
+### Self-Signed Certificate Generation
 
 Install apache on ec2 and generate self-signed certificate.
 
