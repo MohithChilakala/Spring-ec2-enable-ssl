@@ -17,13 +17,8 @@ The provided README offers a comprehensive guide on how to enable SSL in spring 
   - [Self-Signed Certificate Generation](#self-signed-certificate-generation)
 - [Deploying Spring Boot Application on EC2](#deploying-spring-boot-application-on-ec2)
   - [Jar File Generation](#jar-file-generation)
-  - [SCP to EC2 Instance](#scp-to-ec2-instance)
-  - [Putty Configuration](#putty-configuration)
-  - [Java Installation](#java-installation)
-  - [Application Deployment](#application-deployment)
+  - [Run Jar file](#run-jar)
 - [React Frontend](#react-frontend)
-  - [Application Creation](#application-creation)
-  - [Deployment using Netlify](#deployment-using-netlify)
 
 ## Spring Boot Backend
 
@@ -69,49 +64,44 @@ server:
 
 ### EC2 Instance Creation
 
-Detail the process of setting up an EC2 instance on AWS.
+1. Log in to AWS Console
+2. Navigate to EC2
+3. Launch an Instance
+4. Download Key-Pair in putty
+5. **Configure Security Group:**
+   - In the "Configure Security Group" step, add rules for necessary ports:
+      - HTTPS (443)
+      - HTTP (80)
+      - SSH (22)
+      - TCP (8080)
+6. Open Putty on your local machine and connect to ec2
 
 ### Apache Installation
 
-Explain how you installed Apache on the EC2 instance.
+Install apache on ec2 and generate self-signed certificate.
 
-### Self-Signed Certificate Generation
-
-Describe the generation of a self-signed certificate for securing communication.
+Refer this [documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-ami.html) till step1.
 
 ## Deploying Spring Boot Application on EC2
 
 ### Jar File Generation
+1. Run this maven command in spring boot project
+`mvn package spring-boot:repackage`
+2. copy the jar file in target folder and paste it in a seperate folder.
+3. use puttygen and convert key-pair putty file to pem file and store in the same folder.
+4. Open the folder in git bash(or any other) and execute below command.
 
-Explain how you generated the JAR file for the Spring Boot application.
+`scp -i mykey.pem yout-jar-file.jar ec2-user@your-ec2-ipv4-dns:/`
 
-### SCP to EC2 Instance
+### Run Jar File
 
-Detail the process of transferring the JAR file to the EC2 instance using SCP.
-
-### Putty Configuration
-
-Explain how you configured Putty for SSH access to the EC2 instance.
-
-### Java Installation
-
-Describe the installation of Java on the EC2 instance to support the Spring Boot application.
-
-### Application Deployment
-
-Explain how you initiated a screen session and ran the JAR file to deploy the Spring Boot application.
+check if jar file is in ec2
+install java on ec2 from putty
+run jar file in a screen
 
 ## React Frontend
 
-### Application Creation
+Create your react app and deploy using netlify, vercel, etc...
+Your hosting site url should match with the url added for cors in backend
 
-Describe the development of the React application that interacts with the API endpoint on the EC2 instance.
-
-### Deployment using Netlify
-
-Explain how you deployed the React application on Netlify for easy accessibility.
-
-## Questions and Support
-
-If you have any questions or need further assistance, feel free to reach out.
-
+Check out the [Live Demo](https://spring-ssl.netlify.app/) to see the deployed site in action!
