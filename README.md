@@ -4,7 +4,6 @@ This project serves as a testing environment for full-stack projects without the
 
 The provided README offers a comprehensive guide on how to enable SSL in spring boot and deploy in ec2 instance.
 
-<!--
 ## Table of Contents
 
 - [Spring Boot Backend](#spring-boot-backend)
@@ -25,8 +24,6 @@ The provided README offers a comprehensive guide on how to enable SSL in spring 
 - [React Frontend](#react-frontend)
   - [Application Creation](#application-creation)
   - [Deployment using Netlify](#deployment-using-netlify)
-
--->
 
 ## Spring Boot Backend
 
