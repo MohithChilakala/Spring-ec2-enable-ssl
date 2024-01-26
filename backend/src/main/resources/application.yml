@@ -1,6 +1,6 @@
 server:
   ssl:
-    key-alias: "Mohith"
+    key-alias: "your-alias"
     key-store: "classpath:your-username"
     key-store-password: "your-password"
     key-store-type: "PKCS12"
