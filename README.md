@@ -29,25 +29,18 @@ Create a spring boot project and expose an API endpoint to handle a simple a GET
 
 ### Security and CORS Configuration
 
-Add `spring-boot-starter-security` dependency in `pom.xml`
-
-Configure Security, Refer to [oficial documentation](https://docs.spring.io/spring-security/reference/reactive/integrations/cors.html). 
-
-Make sure you add allowed origins for testing in local and also url of client hosting.
-
-Before going further test your api's, ensure that there are no cors errors
+1. Add `spring-boot-starter-security` dependency in `pom.xml`
+2. Configure Security, Refer to [oficial documentation](https://docs.spring.io/spring-security/reference/reactive/integrations/cors.html). 
+3. Make sure you add allowed origins for testing in local and also url of client hosting.
+4. Before going further test your api's, ensure that there are no cors errors
 
 ### SSL Certificate Generation
 
-Open terminal and execute the following command.
-
+1. Open terminal and execute the following command. 
 `keytool -genkeypair -alias your-alias -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore your-keystore -validity 3650`
-
-Enter your-password and other fields.
-
-Make a note of alias, username and password.
-
-Copy the file generated and paste in your spring-boot project directory
+2. Enter your-password and other fields.
+3. Make a note of alias, username and password.
+4. Copy the file generated and paste in your spring-boot project directory
 
 ### Enabling HTTPS
 
@@ -96,9 +89,10 @@ Refer this [documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/S
 
 ### Run Jar File
 
-check if jar file is in ec2
-install java on ec2 from putty
-run jar file in a screen
+1. check if jar file is in ec2
+2. Install java on ec2 from putty
+3. Create new screen in ec2
+4. Run your jar file
 
 ## React Frontend
 
