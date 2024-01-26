@@ -1,4 +1,4 @@
-# Securing the Connection: Configuring HTTPS for Spring Project and React Deployment on EC2
+# Securing the Connection: Configuring HTTPS for Spring Project and Deployment on EC2
 
 This project serves as a testing environment for full-stack projects without the need to purchase a domain. It addresses the challenge of testing when calling HTTP APIs from HTTPS clients is restricted by using a self-signed certificate.
 
