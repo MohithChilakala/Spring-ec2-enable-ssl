@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Securing the Connection: Configuring HTTPS for Spring Project and React Deployment on EC2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project serves as a testing environment for full-stack projects without the need to purchase a domain. It addresses the challenge of testing when calling HTTP APIs from HTTPS clients is restricted by using a self-signed certificate
 
-## Available Scripts
+<!--
+## Table of Contents
 
-In the project directory, you can run:
+- [Spring Boot Backend](#spring-boot-backend)
+  - [Project Creation](#project-creation)
+  - [Security and CORS Configuration](#security-and-cors-configuration)
+  - [SSL Certificate Generation](#ssl-certificate-generation)
+  - [Enabling HTTPS](#enabling-https)
+- [AWS Setup](#aws-setup)
+  - [EC2 Instance Creation](#ec2-instance-creation)
+  - [Apache Installation](#apache-installation)
+  - [Self-Signed Certificate Generation](#self-signed-certificate-generation)
+- [Deploying Spring Boot Application on EC2](#deploying-spring-boot-application-on-ec2)
+  - [Jar File Generation](#jar-file-generation)
+  - [SCP to EC2 Instance](#scp-to-ec2-instance)
+  - [Putty Configuration](#putty-configuration)
+  - [Java Installation](#java-installation)
+  - [Application Deployment](#application-deployment)
+- [React Frontend](#react-frontend)
+  - [Application Creation](#application-creation)
+  - [Deployment using Netlify](#deployment-using-netlify)
 
-### `npm start`
+-->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Spring Boot Backend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Project Creation
 
-### `npm test`
+Describe how you created the Spring Boot project and exposed a GET API.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Security and CORS Configuration
 
-### `npm run build`
+Explain the integration of Spring Security and CORS configuration for enhanced security.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### SSL Certificate Generation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Provide details on how you generated an SSL certificate and stored it in a keystore.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Enabling HTTPS
 
-### `npm run eject`
+Explain the steps taken to configure the Spring Boot application to use HTTPS.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## AWS Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### EC2 Instance Creation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Detail the process of setting up an EC2 instance on AWS.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Apache Installation
 
-## Learn More
+Explain how you installed Apache on the EC2 instance.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Self-Signed Certificate Generation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Describe the generation of a self-signed certificate for securing communication.
 
-### Code Splitting
+## Deploying Spring Boot Application on EC2
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Jar File Generation
 
-### Analyzing the Bundle Size
+Explain how you generated the JAR file for the Spring Boot application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### SCP to EC2 Instance
 
-### Making a Progressive Web App
+Detail the process of transferring the JAR file to the EC2 instance using SCP.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Putty Configuration
 
-### Advanced Configuration
+Explain how you configured Putty for SSH access to the EC2 instance.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Java Installation
 
-### Deployment
+Describe the installation of Java on the EC2 instance to support the Spring Boot application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Application Deployment
 
-### `npm run build` fails to minify
+Explain how you initiated a screen session and ran the JAR file to deploy the Spring Boot application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## React Frontend
+
+### Application Creation
+
+Describe the development of the React application that interacts with the API endpoint on the EC2 instance.
+
+### Deployment using Netlify
+
+Explain how you deployed the React application on Netlify for easy accessibility.
+
+## Questions and Support
+
+If you have any questions or need further assistance, feel free to reach out.
+
