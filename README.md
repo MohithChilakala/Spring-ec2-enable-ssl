@@ -1,6 +1,8 @@
 # Securing the Connection: Configuring HTTPS for Spring Project and React Deployment on EC2
 
-This project serves as a testing environment for full-stack projects without the need to purchase a domain. It addresses the challenge of testing when calling HTTP APIs from HTTPS clients is restricted by using a self-signed certificate
+This project serves as a testing environment for full-stack projects without the need to purchase a domain. It addresses the challenge of testing when calling HTTP APIs from HTTPS clients is restricted by using a self-signed certificate.
+
+The provided README offers a comprehensive guide on how to enable SSL in spring boot and deploy in ec2 instance.
 
 <!--
 ## Table of Contents
@@ -30,19 +32,35 @@ This project serves as a testing environment for full-stack projects without the
 
 ### Project Creation
 
-Describe how you created the Spring Boot project and exposed a GET API.
+Create a spring boot project and expose an API endpoint to handle a simple a GET request. I created a simple method that responds with a "Hello" message.
 
 ### Security and CORS Configuration
 
-Explain the integration of Spring Security and CORS configuration for enhanced security.
+Add `spring-boot-starter-security` dependency in `pom.xml`
+
+Configure Security. Refer to [oficial documentation](https://docs.spring.io/spring-security/reference/reactive/integrations/cors.html). Make sure you add allowed origins for testing in local and also url of client hosting.
+
+Before going further test your api's, make sure there are no cors errors
 
 ### SSL Certificate Generation
 
-Provide details on how you generated an SSL certificate and stored it in a keystore.
+Open terminal and execute the following command
+`keytool -genkeypair -alias your-alias -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore your-keystore -validity 3650`
+Enter your-password and other fields.
+Make a note of alias username and password
+Copy the file generated and paste in your spring-boot project directory
 
 ### Enabling HTTPS
 
-Explain the steps taken to configure the Spring Boot application to use HTTPS.
+Add the below to application.yml
+```
+server:
+  ssl:
+    key-alias: "your-alias"
+    key-store: "classpath:your-username"
+    key-store-password: "your-password"
+    key-store-type: "PKCS12"
+```
 
 ## AWS Setup
 
