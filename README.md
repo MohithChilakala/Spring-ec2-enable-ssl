@@ -4,7 +4,6 @@ This project serves as a testing environment for full-stack projects without the
 
 The provided README offers a comprehensive guide on how to enable SSL in spring boot and deploy in ec2 instance.
 
-<!--
 ## Table of Contents
 
 - [Spring Boot Backend](#spring-boot-backend)
@@ -26,8 +25,6 @@ The provided README offers a comprehensive guide on how to enable SSL in spring 
   - [Application Creation](#application-creation)
   - [Deployment using Netlify](#deployment-using-netlify)
 
--->
-
 ## Spring Boot Backend
 
 ### Project Creation
@@ -38,13 +35,13 @@ Create a spring boot project and expose an API endpoint to handle a simple a GET
 
 Add `spring-boot-starter-security` dependency in `pom.xml`
 
-Configure Security. Refer to [oficial documentation](https://docs.spring.io/spring-security/reference/reactive/integrations/cors.html). Make sure you add allowed origins for testing in local and also url of client hosting.
-
-Before going further test your api's, make sure there are no cors errors
+Configure Security. Refer to [oficial documentation](https://docs.spring.io/spring-security/reference/reactive/integrations/cors.html). 
+Make sure you add allowed origins for testing in local and also url of client hosting.
+Before going further test your api's, ensure that there are no cors errors
 
 ### SSL Certificate Generation
 
-Open terminal and execute the following command
+Open terminal and execute the following command.
 `keytool -genkeypair -alias your-alias -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore your-keystore -validity 3650`
 Enter your-password and other fields.
 Make a note of alias username and password
