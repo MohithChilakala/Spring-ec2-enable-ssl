@@ -4,6 +4,8 @@ This project serves as a testing environment for full-stack projects without the
 
 The provided README offers a comprehensive guide on how to enable SSL in spring boot and deploy in ec2 instance.
 
+This is not recommended for production, for production use proper ssl certificates from certicate authorities like [Certbot](https://certbot.eff.org/), [Let's Encrypt](https://letsencrypt.org/) etc..
+
 ## Table of Contents
 
 - [Spring Boot Backend](#spring-boot-backend)
