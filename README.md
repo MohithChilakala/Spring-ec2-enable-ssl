@@ -6,6 +6,8 @@ The provided README offers a comprehensive guide on how to enable SSL in spring 
 
 This is not recommended for production, for production use proper ssl certificates from certicate authorities like [Certbot](https://certbot.eff.org/), [Let's Encrypt](https://letsencrypt.org/) etc..
 
+Since it's self-signed, for your api call to be accepted you need to tell your browser that ec2 server is safe.
+
 ## Table of Contents
 
 - [Spring Boot Backend](#spring-boot-backend)
