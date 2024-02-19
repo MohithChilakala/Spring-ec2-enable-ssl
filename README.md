@@ -34,7 +34,7 @@ Create a spring boot project and expose an API endpoint to handle a simple a GET
 1. Add `spring-boot-starter-security` dependency in `pom.xml`
 2. Configure Security, Refer to [oficial documentation](https://docs.spring.io/spring-security/reference/reactive/integrations/cors.html). 
 3. Make sure you add allowed origins for testing in local and also url of client hosting.
-4. Before going further test your api's, ensure that there are no cors errors
+4. Before going further test your api's, ensure that there are no cors errors.
 
 ### SSL Certificate Generation
 
