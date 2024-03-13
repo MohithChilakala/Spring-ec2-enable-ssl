@@ -1,6 +1,8 @@
 function App() {
   const handleApiCall = () => {
-    fetch("https://ec2-43-204-145-104.ap-south-1.compute.amazonaws.com:8080/")
+    const end_point = "https://ec2-43-204-145-104.ap-south-1.compute.amazonaws.com:8080/";
+    
+    fetch(end_point)
       .then((res) => {
         return res.text();
       })
@@ -9,9 +11,7 @@ function App() {
       })
       .catch((error) => {
         alert('open backend url manually for client to trust backend');
-        window.open(
-          "https://ec2-13-201-101-1.ap-south-1.compute.amazonaws.com:8080/"
-        );
+        window.open(end_point);
       });
   };
 
